@@ -3,7 +3,7 @@
 int main()
 {
     const int size = 10;
-    int integers[size]{ 2, 5, 78, 6, 2, 8, 9, 12, 45, 10 };
+    int integers[size]{ 32, 5, 78, 6, 2, 8, 9, 12, 45, 10 };
 
     // before sorting
     std::cout << "Массив до сортировки: ";
@@ -16,16 +16,17 @@ int main()
     // sorting
     for (int i = size - 1; i >= 0; i--)
     {
-        for (int j = size - i - 2; j >= 0; j--)
+        for (int j = size - 1; j > size - i - 1; j--)
         {
-            if (integers[j] > integers[j + 1])
+            if (integers[j] < integers[j - 1])
             {
                 int temp = integers[j];
-                integers[j] = integers[j + 1];
-                integers[j + 1] = temp;
+                integers[j] = integers[j - 1];
+                integers[j - 1] = temp;
             }
             
         }
+
     }
 
     // after sorting
